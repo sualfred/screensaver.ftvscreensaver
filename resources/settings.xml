@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <setting id="enable_Dim" type="bool" label="32110" default="false"/>
+    <setting id="scrollspeed" label="32111" type="slider" default="60" range="10,10,100" option="int" />
+    <setting label="32112" type="file" mask=".xsp" id="list1" default="Random Movies"/>
+    <setting label="32113" type="file" mask=".xsp" id="list2" default="Random TV Shows" />
+</settings>

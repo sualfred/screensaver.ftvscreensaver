@@ -1,2 +1,8 @@
+0.0.2
+ - added DIM option
+ - added scrollspeed option
+ - added custom playlist option
+ - added localisation
+
 0.0.1
  - initial version

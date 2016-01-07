@@ -41,8 +41,20 @@ class Screensaver(xbmcgui.WindowXMLDialog):
         self.started = False
         self.exit_monitor = self.ExitMonitor(self.exit)
 
-        xbmcgui.Window(10000).setProperty('fTVscreensaver.content1', '%s/resources/playlist/movie_idle.xsp' % addon_path)
-        xbmcgui.Window(10000).setProperty('fTVscreensaver.content2', '%s/resources/playlist/tvshow_idle.xsp' % addon_path)
+        if addon.getSetting('enable_Dim') == 'true':
+            xbmcgui.Window(10000).setProperty('fTVscreensaver.dim', '1')
+
+        if addon.getSetting('list1') == 'Random Movies':
+            xbmcgui.Window(10000).setProperty('fTVscreensaver.content1', '%s/resources/playlist/movie_idle.xsp' % addon_path)
+        else:
+            xbmcgui.Window(10000).setProperty('fTVscreensaver.content1', addon.getSetting('list1'))
+
+        if addon.getSetting('list2') == 'Random TV Shows':
+            xbmcgui.Window(10000).setProperty('fTVscreensaver.content2', '%s/resources/playlist/tvshow_idle.xsp' % addon_path)
+        else:
+            xbmcgui.Window(10000).setProperty('fTVscreensaver.content2', addon.getSetting('list2'))
+
+        xbmcgui.Window(10000).setProperty('fTVscreensaver.scrollspeed', addon.getSetting('scrollspeed'))
 
     def exit(self):
         self.abort_requested = True

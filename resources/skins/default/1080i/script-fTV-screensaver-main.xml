@@ -4,6 +4,7 @@
     <onunload>ClearProperty(StartLoop,Home)</onunload>
     <onunload>ClearProperty(fTVscreensaver.content1,Home)</onunload>
     <onunload>ClearProperty(fTVscreensaver.content2,Home)</onunload>
+    <onunload>ClearProperty(fTVscreensaver.dim,Home)</onunload>
     <animation type="WindowOpen">
         <effect center="990,540" tween="circle" easing="out" end="100" start="110" time="400" type="zoom" />
         <effect easing="inout" end="100" start="0" time="400" tween="sine" type="fade" />
@@ -64,7 +65,16 @@
         </control>
         <!-- round 1 -->
         <control type="grouplist">
-            <animation loop="true" condition="!IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="65000" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),10) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="10000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),20) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="20000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),30) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="30000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),40) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="40000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),50) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="50000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),60) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="60000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),70) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="70000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),80) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="80000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),90) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="90000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),100) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="100000" tween="linear" reversible="false" effect="slide">Conditional</animation>
             <heigth>1060</heigth>
             <width>6135</width>
             <top>10</top>
@@ -349,7 +359,16 @@
         <!-- round 2 -->
         <control type="grouplist">
             <left>6145</left>
-            <animation loop="true" condition="!IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="65000" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),10) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="10000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),20) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="20000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),30) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="30000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),40) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="40000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),50) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="50000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),60) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="60000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),70) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="70000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),80) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="80000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),90) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="90000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),100) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="100000" tween="linear" reversible="false" effect="slide">Conditional</animation>
             <heigth>1060</heigth>
             <width>6135</width>
             <top>10</top>
@@ -656,6 +675,17 @@
                     <onclick>noop</onclick>
                 </item>
             </content>
+        </control>
+        <!-- Dim -->
+        <control type="image">
+            <left>0</left>
+            <top>0</top>
+            <width>1920</width>
+            <height>1080</height>
+            <texture>default.png</texture>
+            <visible>!IsEmpty(Window(Home).Property(fTVscreensaver.dim))</visible>
+            <animation effect="fade" start="0" end="80" time="2000" delay="60000" reversible="false">Visible</animation>
+            <animation effect="fade" start="0" end="0" time="0" reversible="false">hidden</animation>
         </control>
     </controls>
 </window>
