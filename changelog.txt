@@ -1,3 +1,6 @@
+0.0.3
+ - fixed scrollspeed direction
+ 
 0.0.2
  - added DIM option
  - added scrollspeed option
