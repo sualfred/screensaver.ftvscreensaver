@@ -290,7 +290,7 @@ class XbmcMedia:
 
 if __name__ == '__main__':
     screensaver = Screensaver(
-        'script-ftv-screensaver-main.xml',
+        'script-fTV-screensaver-main.xml',
         addon_path,
         'default',
     )

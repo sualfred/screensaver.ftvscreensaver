@@ -1,3 +1,6 @@
+0.1.2
+ - fixed case sensitive bug for openelec
+
 0.1.1 reworked screensaver
  - cleanup
  - added DIM options
