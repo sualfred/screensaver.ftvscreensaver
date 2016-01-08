@@ -1,60 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <window>
-    <onload>AlarmClock(LoopDelayStart,SetProperty(StartLoop,1,Home),00:01,silent)</onload>
-    <onunload>ClearProperty(StartLoop,Home)</onunload>
-    <onunload>ClearProperty(fTVscreensaver.content1,Home)</onunload>
-    <onunload>ClearProperty(fTVscreensaver.content2,Home)</onunload>
-    <onunload>ClearProperty(fTVscreensaver.dim,Home)</onunload>
+    <onload>AlarmClock(LoopDelayStart,SetProperty(fTVscreensaver.StartLoop,1,Home),00:01,silent)</onload>
     <animation type="WindowOpen">
         <effect center="990,540" tween="circle" easing="out" end="100" start="110" time="400" type="zoom" />
         <effect easing="inout" end="100" start="0" time="400" tween="sine" type="fade" />
     </animation>
     <controls>
-        <!-- hidden list -->
-        <control id="1101" type="list">
-            <top>-10</top>
-            <width>10</width>
-            <height>1</height>
-            <viewtype label="">list</viewtype>
-            <orientation>horizontal</orientation>
-            <itemlayout height="1" width="1" />
-            <focusedlayout height="1" width="1" />
-            <content limit="20">$INFO[Window(Home).Property(fTVscreensaver.content1)]</content>
-            <visible>StringCompare(Container(1100).ListItem.Label,content1)</visible>
-        </control>
-        <control id="1102" type="list">
-            <top>-10</top>
-            <width>10</width>
-            <height>1</height>
-            <viewtype label="">list</viewtype>
-            <orientation>horizontal</orientation>
-            <itemlayout height="1" width="1" />
-            <focusedlayout height="1" width="1" />
-            <content limit="20">$INFO[Window(Home).Property(fTVscreensaver.content2)]</content>
-            <visible>StringCompare(Container(1100).ListItem.Label,content1)</visible>
-        </control>
-        <control id="1101" type="list">
-            <top>-10</top>
-            <width>10</width>
-            <height>1</height>
-            <viewtype label="">list</viewtype>
-            <orientation>horizontal</orientation>
-            <itemlayout height="1" width="1" />
-            <focusedlayout height="1" width="1" />
-            <content limit="20">$INFO[Window(Home).Property(fTVscreensaver.content2)]</content>
-            <visible>StringCompare(Container(1100).ListItem.Label,content2)</visible>
-        </control>
-        <control id="1102" type="list">
-            <top>-10</top>
-            <width>10</width>
-            <height>1</height>
-            <viewtype label="">list</viewtype>
-            <orientation>horizontal</orientation>
-            <itemlayout height="1" width="1" />
-            <focusedlayout height="1" width="1" />
-            <content limit="20">$INFO[Window(Home).Property(fTVscreensaver.content1)]</content>
-            <visible>StringCompare(Container(1100).ListItem.Label,content2)</visible>
-        </control>
         <!-- Background -->
         <control type="image">
             <left>0</left>
@@ -65,16 +16,16 @@
         </control>
         <!-- round 1 -->
         <control type="grouplist">
-            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),100) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="10000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),90) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="20000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),80) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="30000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),70) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="40000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),60) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="50000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),50) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="60000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),40) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="70000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),30) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="80000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),20) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="90000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),10) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="100000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.Scrollspeed),100) + !IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="10000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.Scrollspeed),90) + !IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="20000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.Scrollspeed),80) + !IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="30000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.Scrollspeed),70) + !IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="40000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.Scrollspeed),60) + !IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="50000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.Scrollspeed),50) + !IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="60000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.Scrollspeed),40) + !IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="70000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.Scrollspeed),30) + !IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="80000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.Scrollspeed),20) + !IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="90000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.Scrollspeed),10) + !IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="100000" tween="linear" reversible="false" effect="slide">Conditional</animation>
             <heigth>1060</heigth>
             <width>6135</width>
             <top>10</top>
@@ -85,43 +36,43 @@
                 <height>700</height>
                 <width>1055</width>
                 <!-- #1 1/2 fanart -->
-                <control type="image">
+                <control type="image" id="201">
                     <left>0</left>
                     <top>0</top>
                     <height>525</height>
                     <width>700</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1101).ListItemPosition(0).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.1)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #2 poster 1/2 -->
-                <control type="image">
+                <control type="image" id="101">
                     <left>0</left>
                     <top>535</top>
                     <height>525</height>
                     <width>345</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Container(1102).ListItemPosition(1).Art(poster)]</texture>
+                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.Poster.1)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #3 1/2 poster -->
-                <control type="image">
+                <control type="image" id="102">
                     <left>710</left>
                     <top>0</top>
                     <height>525</height>
                     <width>345</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Container(1101).ListItemPosition(2).Art(poster)]</texture>
+                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.Poster.2)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #4 1/2 fanart -->
-                <control type="image">
+                <control type="image" id="202">
                     <left>355</left>
                     <top>535</top>
                     <height>525</height>
                     <width>700</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1102).ListItemPosition(3).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.2)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
             </control>
@@ -130,33 +81,33 @@
                 <height>700</height>
                 <width>461</width>
                 <!-- #5 1/3 fanart -->
-                <control type="image">
+                <control type="image" id="203">
                     <left>0</left>
                     <top>0</top>
                     <height>346</height>
                     <width>461</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1102).ListItemPosition(4).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.3)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #6 1/3 fanart -->
-                <control type="image">
+                <control type="image" id="204">
                     <left>0</left>
                     <top>356</top>
                     <height>347</height>
                     <width>461</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1101).ListItemPosition(5).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.4)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #7 1/3 fanart -->
-                <control type="image">
+                <control type="image" id="205">
                     <left>0</left>
                     <top>713</top>
                     <height>347</height>
                     <width>461</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1102).ListItemPosition(6).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.5)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
             </control>
@@ -165,23 +116,23 @@
                 <height>700</height>
                 <width>463</width>
                 <!-- #8 1/3 fanart -->
-                <control type="image">
+                <control type="image" id="206">
                     <left>0</left>
                     <top>0</top>
                     <height>346</height>
                     <width>463</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1101).ListItemPosition(7).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.6)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #9 2/3 poster -->
-                <control type="image">
+                <control type="image" id="103">
                     <left>0</left>
                     <top>356</top>
                     <height>704</height>
                     <width>463</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Container(1102).ListItemPosition(8).Art(poster)]</texture>
+                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.Poster.3)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
             </control>
@@ -190,23 +141,23 @@
                 <height>700</height>
                 <width>700</width>
                 <!-- #10 1/2 fanart -->
-                <control type="image">
+                <control type="image" id="207">
                     <left>0</left>
                     <top>0</top>
                     <height>525</height>
                     <width>700</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1102).ListItemPosition(9).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.7)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #11 1/2 fanart -->
-                <control type="image">
+                <control type="image" id="208">
                     <left>0</left>
                     <top>535</top>
                     <height>525</height>
                     <width>700</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1101).ListItemPosition(9).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.8)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
             </control>
@@ -215,43 +166,43 @@
                 <height>700</height>
                 <width>1055</width>
                 <!-- #12 poster 1/2 -->
-                <control type="image">
+                <control type="image" id="104">
                     <left>0</left>
                     <top>0</top>
                     <height>525</height>
                     <width>345</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Container(1102).ListItemPosition(10).Art(poster)]</texture>
+                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.Poster.4)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #13 1/2 fanart -->
-                <control type="image">
+                <control type="image" id="209">
                     <left>0</left>
                     <top>535</top>
                     <height>525</height>
                     <width>700</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1101).ListItemPosition(11).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.9)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #14 1/2 fanart -->
-                <control type="image">
+                <control type="image" id="210">
                     <left>355</left>
                     <top>0</top>
                     <height>525</height>
                     <width>700</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1102).ListItemPosition(12).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.10)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #15 poster 1/2 -->
-                <control type="image">
+                <control type="image" id="105">
                     <left>710</left>
                     <top>535</top>
                     <height>525</height>
                     <width>345</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Container(1101).ListItemPosition(13).Art(poster)]</texture>
+                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.Poster.5)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
             </control>
@@ -260,33 +211,33 @@
                 <height>700</height>
                 <width>461</width>
                 <!-- #16 1/3 fanart -->
-                <control type="image">
+                <control type="image" id="211">
                     <left>0</left>
                     <top>0</top>
                     <height>346</height>
                     <width>461</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1102).ListItemPosition(14).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.11)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #17 1/3 fanart -->
-                <control type="image">
+                <control type="image" id="212">
                     <left>0</left>
                     <top>356</top>
                     <height>347</height>
                     <width>461</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1101).ListItemPosition(15).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.12)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #18 1/3 fanart -->
-                <control type="image">
+                <control type="image" id="213">
                     <left>0</left>
                     <top>713</top>
                     <height>347</height>
                     <width>461</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1101).ListItemPosition(16).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.13)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
             </control>
@@ -295,13 +246,13 @@
                 <height>700</height>
                 <width>697</width>
                 <!-- #19 poster 1/1 -->
-                <control type="image">
+                <control type="image" id="106">
                     <left>0</left>
                     <top>0</top>
                     <height>1060</height>
                     <width>697</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Container(1101).ListItemPosition(17).Art(poster)]</texture>
+                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.Poster.6)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
             </control>
@@ -310,23 +261,23 @@
                 <height>700</height>
                 <width>700</width>
                 <!-- #20 1/2 fanart -->
-                <control type="image">
+                <control type="image" id="214">
                     <left>0</left>
                     <top>0</top>
                     <height>525</height>
                     <width>700</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1102).ListItemPosition(18).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.14)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #21 1/2 fanart -->
-                <control type="image">
+                <control type="image" id="215">
                     <left>0</left>
                     <top>535</top>
                     <height>525</height>
                     <width>700</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1101).ListItemPosition(18).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.15)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
             </control>
@@ -335,23 +286,23 @@
                 <height>700</height>
                 <width>463</width>
                 <!-- #22 2/3 poster -->
-                <control type="image">
+                <control type="image" id="107">
                     <left>0</left>
                     <top>0</top>
                     <height>704</height>
                     <width>463</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Container(1102).ListItemPosition(19).Art(poster)]</texture>
+                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.Poster.7)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #23 1/3 fanart -->
-                <control type="image">
+                <control type="image" id="216">
                     <left>0</left>
                     <top>714</top>
                     <height>346</height>
                     <width>463</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1101).ListItemPosition(19).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.16)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
             </control>
@@ -359,16 +310,16 @@
         <!-- round 2 -->
         <control type="grouplist">
             <left>6145</left>
-            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),100) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="10000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),90) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="20000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),80) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="30000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),70) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="40000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),60) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="50000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),50) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="60000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),40) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="70000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),30) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="80000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),20) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="90000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.scrollspeed),10) + !IsEmpty(Window(Home).Property(StartLoop))" start="0,0" end="-6135,0" time="100000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.Scrollspeed),100) + !IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="10000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.Scrollspeed),90) + !IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="20000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.Scrollspeed),80) + !IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="30000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.Scrollspeed),70) + !IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="40000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.Scrollspeed),60) + !IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="50000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.Scrollspeed),50) + !IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="60000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.Scrollspeed),40) + !IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="70000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.Scrollspeed),30) + !IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="80000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.Scrollspeed),20) + !IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="90000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+            <animation loop="true" condition="StringCompare(Window(Home).Property(fTVscreensaver.Scrollspeed),10) + !IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="100000" tween="linear" reversible="false" effect="slide">Conditional</animation>
             <heigth>1060</heigth>
             <width>6135</width>
             <top>10</top>
@@ -379,43 +330,43 @@
                 <height>700</height>
                 <width>1055</width>
                 <!-- #1 1/2 fanart -->
-                <control type="image">
+                <control type="image" id="201">
                     <left>0</left>
                     <top>0</top>
                     <height>525</height>
                     <width>700</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1101).ListItemPosition(0).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.1)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #2 poster 1/2 -->
-                <control type="image">
+                <control type="image" id="101">
                     <left>0</left>
                     <top>535</top>
                     <height>525</height>
                     <width>345</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Container(1102).ListItemPosition(1).Art(poster)]</texture>
+                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.Poster.1)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #3 1/2 poster -->
-                <control type="image">
+                <control type="image" id="102">
                     <left>710</left>
                     <top>0</top>
                     <height>525</height>
                     <width>345</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Container(1101).ListItemPosition(2).Art(poster)]</texture>
+                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.Poster.2)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #4 1/2 fanart -->
-                <control type="image">
+                <control type="image" id="202">
                     <left>355</left>
                     <top>535</top>
                     <height>525</height>
                     <width>700</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1102).ListItemPosition(3).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.2)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
             </control>
@@ -424,33 +375,33 @@
                 <height>700</height>
                 <width>461</width>
                 <!-- #5 1/3 fanart -->
-                <control type="image">
+                <control type="image" id="203">
                     <left>0</left>
                     <top>0</top>
                     <height>346</height>
                     <width>461</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1102).ListItemPosition(4).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.3)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #6 1/3 fanart -->
-                <control type="image">
+                <control type="image" id="204">
                     <left>0</left>
                     <top>356</top>
                     <height>347</height>
                     <width>461</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1101).ListItemPosition(5).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.4)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #7 1/3 fanart -->
-                <control type="image">
+                <control type="image" id="205">
                     <left>0</left>
                     <top>713</top>
                     <height>347</height>
                     <width>461</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1102).ListItemPosition(6).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.5)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
             </control>
@@ -459,23 +410,23 @@
                 <height>700</height>
                 <width>463</width>
                 <!-- #8 1/3 fanart -->
-                <control type="image">
+                <control type="image" id="206">
                     <left>0</left>
                     <top>0</top>
                     <height>346</height>
                     <width>463</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1101).ListItemPosition(7).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.6)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #9 2/3 poster -->
-                <control type="image">
+                <control type="image" id="103">
                     <left>0</left>
                     <top>356</top>
                     <height>704</height>
                     <width>463</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Container(1102).ListItemPosition(8).Art(poster)]</texture>
+                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.Poster.3)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
             </control>
@@ -484,23 +435,23 @@
                 <height>700</height>
                 <width>700</width>
                 <!-- #10 1/2 fanart -->
-                <control type="image">
+                <control type="image" id="207">
                     <left>0</left>
                     <top>0</top>
                     <height>525</height>
                     <width>700</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1102).ListItemPosition(9).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.7)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #11 1/2 fanart -->
-                <control type="image">
+                <control type="image" id="208">
                     <left>0</left>
                     <top>535</top>
                     <height>525</height>
                     <width>700</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1101).ListItemPosition(9).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.8)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
             </control>
@@ -509,43 +460,43 @@
                 <height>700</height>
                 <width>1055</width>
                 <!-- #12 poster 1/2 -->
-                <control type="image">
+                <control type="image" id="104">
                     <left>0</left>
                     <top>0</top>
                     <height>525</height>
                     <width>345</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Container(1102).ListItemPosition(10).Art(poster)]</texture>
+                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.Poster.4)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #13 1/2 fanart -->
-                <control type="image">
+                <control type="image" id="209">
                     <left>0</left>
                     <top>535</top>
                     <height>525</height>
                     <width>700</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1101).ListItemPosition(11).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.9)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #14 1/2 fanart -->
-                <control type="image">
+                <control type="image" id="210">
                     <left>355</left>
                     <top>0</top>
                     <height>525</height>
                     <width>700</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1102).ListItemPosition(12).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.10)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #15 poster 1/2 -->
-                <control type="image">
+                <control type="image" id="105">
                     <left>710</left>
                     <top>535</top>
                     <height>525</height>
                     <width>345</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Container(1101).ListItemPosition(13).Art(poster)]</texture>
+                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.Poster.5)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
             </control>
@@ -554,33 +505,33 @@
                 <height>700</height>
                 <width>461</width>
                 <!-- #16 1/3 fanart -->
-                <control type="image">
+                <control type="image" id="211">
                     <left>0</left>
                     <top>0</top>
                     <height>346</height>
                     <width>461</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1102).ListItemPosition(14).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.11)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #17 1/3 fanart -->
-                <control type="image">
+                <control type="image" id="212">
                     <left>0</left>
                     <top>356</top>
                     <height>347</height>
                     <width>461</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1101).ListItemPosition(15).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.12)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #18 1/3 fanart -->
-                <control type="image">
+                <control type="image" id="213">
                     <left>0</left>
                     <top>713</top>
                     <height>347</height>
                     <width>461</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1101).ListItemPosition(16).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.13)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
             </control>
@@ -589,13 +540,13 @@
                 <height>700</height>
                 <width>697</width>
                 <!-- #19 poster 1/1 -->
-                <control type="image">
+                <control type="image" id="106">
                     <left>0</left>
                     <top>0</top>
                     <height>1060</height>
                     <width>697</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Container(1101).ListItemPosition(17).Art(poster)]</texture>
+                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.Poster.6)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
             </control>
@@ -604,23 +555,23 @@
                 <height>700</height>
                 <width>700</width>
                 <!-- #20 1/2 fanart -->
-                <control type="image">
+                <control type="image" id="214">
                     <left>0</left>
                     <top>0</top>
                     <height>525</height>
                     <width>700</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1102).ListItemPosition(18).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.14)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #21 1/2 fanart -->
-                <control type="image">
+                <control type="image" id="215">
                     <left>0</left>
                     <top>535</top>
                     <height>525</height>
                     <width>700</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1101).ListItemPosition(18).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.15)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
             </control>
@@ -629,53 +580,27 @@
                 <height>700</height>
                 <width>463</width>
                 <!-- #22 2/3 poster -->
-                <control type="image">
+                <control type="image" id="107">
                     <left>0</left>
                     <top>0</top>
                     <height>704</height>
                     <width>463</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Container(1102).ListItemPosition(19).Art(poster)]</texture>
+                    <texture fallback="views/poster_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.Poster.7)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
                 <!-- #23 1/3 fanart -->
-                <control type="image">
+                <control type="image" id="216">
                     <left>0</left>
                     <top>714</top>
                     <height>346</height>
                     <width>463</width>
                     <aspectratio align="center">scale</aspectratio>
-                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Container(1101).ListItemPosition(19).Art(fanart)]</texture>
+                    <texture fallback="views/wide_fallback.png" background="true">$INFO[Window(Home).Property(fTVscreensaver.FanArt.16)]</texture>
                     <fadetime>1000</fadetime>
                 </control>
             </control>
-        </control>
-        <!-- refresh trigger -->
-        <control type="wraplist" id="1100">
-            <autoscroll>true</autoscroll>
-            <scrolltime tween="sine" easing="out">50000</scrolltime>
-            <top>-10</top>
-            <width>10</width>
-            <height>1</height>
-            <viewtype label="">list</viewtype>
-            <orientation>horizontal</orientation>
-            <itemlayout height="1" width="1" />
-            <focusedlayout height="1" width="1" />
-            <content>
-                <item id="1">
-                    <label>content1</label>
-                    <icon>-</icon>
-                    <thumb>-</thumb>
-                    <onclick>noop</onclick>
-                </item>
-                <item id="2">
-                    <label>content2</label>
-                    <icon>-</icon>
-                    <thumb>-</thumb>
-                    <onclick>noop</onclick>
-                </item>
-            </content>
-        </control>
+        </control>       
         <!-- Dim -->
         <control type="image">
             <left>0</left>
@@ -683,7 +608,7 @@
             <width>1920</width>
             <height>1080</height>
             <texture>default.png</texture>
-            <visible>!IsEmpty(Window(Home).Property(fTVscreensaver.dim))</visible>
+            <visible>!IsEmpty(Window(Home).Property(fTVscreensaver.Dim))</visible>
             <animation effect="fade" start="0" end="80" time="2000" delay="60000" reversible="false">Visible</animation>
             <animation effect="fade" start="0" end="0" time="0" reversible="false">hidden</animation>
         </control>

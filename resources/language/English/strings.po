@@ -27,9 +27,21 @@ msgid "Scrollspeed"
 msgstr ""
 
 msgctxt "#32112"
-msgid "Movie Playlist"
+msgid "Refresh interval in seconds"
 msgstr ""
 
 msgctxt "#32113"
-msgid "TV Show Playlist"
+msgid "Image source"
+msgstr ""
+
+msgctxt "#32115"
+msgid "Movies / TV Shows"
+msgstr ""
+
+msgctxt "#32116"
+msgid "Image folder"
+msgstr ""
+
+msgctxt "#32117"
+msgid "- Path"
 msgstr ""

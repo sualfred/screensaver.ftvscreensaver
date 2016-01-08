@@ -1,3 +1,9 @@
+0.1.0
+ reworked screensaver
+ - removed playlist method and replaced it with JSON method
+ - added option to set the refresh interval
+ - added optoion to choose between video library or custom image folder as image source
+
 0.0.3
  - fixed scrollspeed direction
  
