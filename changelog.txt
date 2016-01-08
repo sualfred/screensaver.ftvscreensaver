@@ -1,5 +1,8 @@
-0.1.0
- reworked screensaver
+0.1.1 reworked screensaver
+ - cleanup
+ - added DIM options
+
+0.1.0 reworked screensaver
  - removed playlist method and replaced it with JSON method
  - added option to set the refresh interval
  - added optoion to choose between video library or custom image folder as image source

@@ -19,7 +19,7 @@ msgstr ""
 #Settings
 
 msgctxt "#32110"
-msgid "Dim after 60 seconds"
+msgid "Dim"
 msgstr ""
 
 msgctxt "#32111"
@@ -27,7 +27,7 @@ msgid "Scrollspeed"
 msgstr ""
 
 msgctxt "#32112"
-msgid "Refresh interval in seconds"
+msgid "Refresh interval (Seconds)"
 msgstr ""
 
 msgctxt "#32113"
@@ -44,4 +44,12 @@ msgstr ""
 
 msgctxt "#32117"
 msgid "- Path"
+msgstr ""
+
+msgctxt "#32118"
+msgid "- Dim timer (Minutes)"
+msgstr ""
+
+msgctxt "#32119"
+msgid "- Dim level (Percent)"
 msgstr ""

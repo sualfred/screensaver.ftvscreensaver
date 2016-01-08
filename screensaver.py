@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-#     Copyright (C) 2013 Tristan Fischer (sphere@dersphere.de)
+#    Copyright (C) 2015 Sebastian Sänger (su4lfred@gmail)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -23,7 +23,6 @@ import xbmcgui
 import thread
 from time import time
 import json
-import xbmc
 import urllib
 import random
 import xbmcvfs
@@ -32,17 +31,14 @@ addon = xbmcaddon.Addon()
 addon_name = addon.getAddonInfo('name')
 addon_path = addon.getAddonInfo('path')
 
-
 class Screensaver(xbmcgui.WindowXMLDialog):
 
     refresh_prop = 0 #when to refresh the properties
-    refresh_media = 0 #when to refresh the media list
-    
+    refresh_media = 0 #when to refresh the media list    
     WINDOW = None #object representing the home window
     kodi_tvshows = None #array for tv shows
     kodi_videos = None #array for movie files
     images = None #array for image folder
-
     images_index = 0
     tv_index = 0
     movie_index = 0
@@ -55,10 +51,9 @@ class Screensaver(xbmcgui.WindowXMLDialog):
         def onScreensaverDeactivated(self):
             self.exit_callback()
 
-    def onInit(self):
+    def onInit(self):        
+        #init        
         self.log("fTVscreensaver Started")
-        
-        #init
         self.WINDOW = xbmcgui.Window(10000)
         self.kodi_tvshows = list()
         self.kodi_videos = list()
@@ -66,23 +61,28 @@ class Screensaver(xbmcgui.WindowXMLDialog):
         self.abort_requested = False
         self.started = False
         self.exit_monitor = self.ExitMonitor(self.exit)
-
-        #get xml rendering settings
-        if addon.getSetting('enable_Dim') == 'true':
-            xbmcgui.Window(10000).setProperty('fTVscreensaver.Dim', '1')    
-        xbmcgui.Window(10000).setProperty('fTVscreensaver.Scrollspeed', addon.getSetting('scrollspeed'))
-
+        #get settings
+        self.DimEnabled = addon.getSetting('DimEnabled')
+        self.DimTimer = addon.getSetting('DimTimer')
+        self.DimLevel = addon.getSetting('DimLevel')
+        self.ScrollSpeed = addon.getSetting('scrollspeed')
+        #set dim
+        if self.DimEnabled == 'true':
+            xbmcgui.Window(10000).setProperty('fTVscreensaver.Dim', '1')
+            xbmcgui.Window(10000).setProperty('fTVscreensaver.DimTimer', self.DimTimer)
+            xbmcgui.Window(10000).setProperty('fTVscreensaver.DimLevel', self.DimLevel)
+        #set scrollspeed
+        xbmcgui.Window(10000).setProperty('fTVscreensaver.Scrollspeed', self.ScrollSpeed)
         #grab images and set properties
         self.scanContent()        
         self.slideshow()
 
     def slideshow(self):
+        # Use custom image folder
         if addon.getSetting('source') == '1': 
             while not self.abort_requested:
-                if(time() >= self.refresh_prop):
-                    
-                    foundImages = len(self.images)             
-                    
+                if(time() >= self.refresh_prop):                    
+                    foundImages = len(self.images)                             
                     if(len(self.images) > 0):                        
                         try:    
                             self.WINDOW.setProperty('fTVscreensaver.FanArt.1',self.images[self.randomNum(foundImages)])
@@ -109,23 +109,20 @@ class Screensaver(xbmcgui.WindowXMLDialog):
                             self.WINDOW.setProperty('fTVscreensaver.Poster.6',self.images[self.randomNum(foundImages)])
                             self.WINDOW.setProperty('fTVscreensaver.Poster.7',self.images[self.randomNum(foundImages)])                            
                         except IndexError:
-                            pass                 
-                    
+                            pass                    
                     refresh_interval = int(addon.getSetting('refresh'))                     
                     self.refresh_prop = time() + refresh_interval
-                    self.WINDOW.setProperty('fTVscreensaver.Ready',"true")
-        
+                    self.WINDOW.setProperty('fTVscreensaver.Ready',"true")        
                 if self.abort_requested:
                     self.log('fTVscreensaver abort_requested')
                     self.exit()
                     return
                 xbmc.sleep(500)
+        # Use Kodi library via JSON
         else:
             while not self.abort_requested:
-                if(time() >= self.refresh_prop):
-                    
-                    foundVideos = len(self.kodi_videos)
-                    
+                if(time() >= self.refresh_prop):                    
+                    foundVideos = len(self.kodi_videos)                    
                     if(len(self.kodi_videos) > 0):    
                         try:    
                             self.WINDOW.setProperty('fTVscreensaver.FanArt.1',self.kodi_videos[self.randomNum(foundVideos)].fan_art)
@@ -152,12 +149,10 @@ class Screensaver(xbmcgui.WindowXMLDialog):
                             self.WINDOW.setProperty('fTVscreensaver.Poster.6',self.kodi_videos[self.randomNum(foundVideos)].poster)
                             self.WINDOW.setProperty('fTVscreensaver.Poster.7',self.kodi_videos[self.randomNum(foundVideos)].poster)                            
                         except IndexError:
-                            pass                 
-                    
+                            pass                    
                     refresh_interval = int(addon.getSetting('refresh'))                     
                     self.refresh_prop = time() + refresh_interval
-                    self.WINDOW.setProperty('fTVscreensaver.Ready',"true")
-        
+                    self.WINDOW.setProperty('fTVscreensaver.Ready',"true")        
                 if self.abort_requested:
                     self.log('fTVscreensaver abort_requested')
                     self.exit()
@@ -166,6 +161,8 @@ class Screensaver(xbmcgui.WindowXMLDialog):
 
     def exit(self):
         self.abort_requested = True
+
+        #Clear properties
         self.WINDOW.clearProperty('fTVscreensaver.FanArt.1')
         self.WINDOW.clearProperty('fTVscreensaver.FanArt.2')
         self.WINDOW.clearProperty('fTVscreensaver.FanArt.3')
@@ -191,6 +188,9 @@ class Screensaver(xbmcgui.WindowXMLDialog):
         self.WINDOW.clearProperty('fTVscreensaver.Poster.7')
         self.WINDOW.clearProperty('fTVscreensaver.Dim')
         self.WINDOW.clearProperty('fTVscreensaver.StartLoop')
+        self.WINDOW.clearProperty('fTVscreensaver.DimTimer')
+        self.WINDOW.clearProperty('fTVscreensaver.DimLevel')
+
         self.exit_monitor = None
         self.log('exit')
         self.close()
@@ -199,58 +199,48 @@ class Screensaver(xbmcgui.WindowXMLDialog):
         xbmc.log(u'fTV Screensaver: %s' % msg)
 
     def scanContent(self):     
-        
-        if addon.getSetting('source') == '1':            
-
+        # Use custom image folder
+        if addon.getSetting('source') == '1':
             path = addon.getSetting('path')
-            self.images = self._get_folder_images(path)
-            
+            self.images = self.scanFolder(path)            
+        # Use Kodi library via JSON
         else:
+            # Fetch movies
             media_array = self.getJSON('VideoLibrary.GetMovies','{"properties":["title","art","year","file","plot"]}')                
             if(media_array != None and media_array.has_key('movies')):
                 self.kodi_videos = list()    #reset the list
-                self.movie_index = 0
-                
+                self.movie_index = 0                
                 for aMovie in media_array['movies']:
                     newMedia = XbmcMedia()
-                    newMedia.title = aMovie['title']
-                    
+                    newMedia.title = aMovie['title']                    
                     if(aMovie['art'].has_key('fanart')):
                         newMedia.fan_art = aMovie['art']['fanart']
-
                     if(aMovie['art'].has_key('poster')):
                         newMedia.poster = aMovie['art']['poster']
-
                     if(newMedia.verify()):
                         self.kodi_videos.append(newMedia)
-                random.shuffle(self.kodi_videos)
-                
-            self.log("found movies " + str(len(self.kodi_videos)))
-            
+                random.shuffle(self.kodi_videos)                
+            self.log("found movies " + str(len(self.kodi_videos)))            
             media_array = self.getJSON('VideoLibrary.GetTVShows','{"properties":["title","art","year","file","plot"]}')
+            # Fetch tv shows
             if(media_array != None and media_array.has_key('tvshows')):
                 self.kodi_tvshows = list()
-                self.tv_index = 0
-                 
+                self.tv_index = 0                 
                 for aShow in media_array['tvshows']:
                     newMedia = XbmcMedia()
-                    newMedia.title = aShow['title']
-                    
+                    newMedia.title = aShow['title']                    
                     if(aShow['art'].has_key('fanart')):
                         newMedia.fan_art = aShow['art']['fanart']
-
                     if(aShow['art'].has_key('poster')):
                         newMedia.poster = aShow['art']['poster']
-
                     if(newMedia.verify()):
-                        self.kodi_videos.append(newMedia)
-                random.shuffle(self.kodi_videos)                    
-
-            self.log("found tv " + str(len(self.kodi_tvshows)))    
+                        self.kodi_videos.append(newMedia) #join fetched shows to the movie list
+                random.shuffle(self.kodi_videos)
+            self.log("found tv " + str(len(self.kodi_tvshows)))
                 
-    
-    def _get_folder_images(self, path):
-        self.log('_get_folder_images started with path: %s' % repr(path))
+    def scanFolder(self, path):
+        #Scan set folder for images with png and jpg extension
+        self.log('scanFolder started with path: %s' % repr(path))
         dirs, files = xbmcvfs.listdir(path)
         images = [
             xbmc.validatePath(path + f) for f in files
@@ -261,18 +251,16 @@ class Screensaver(xbmcgui.WindowXMLDialog):
                 if directory.startswith('.'):
                     continue
                 images.extend(
-                    self._get_folder_images(
+                    self.scanFolder(
                         xbmc.validatePath('/'.join((path, directory, '')))
                     )
                 )
-        self.log('_get_folder_images ends')
+        self.log('scanFolder ends')
         return images
 
     def getJSON(self,method,params):
         json_response = xbmc.executeJSONRPC('{ "jsonrpc" : "2.0" , "method" : "' + method + '" , "params" : ' + params + ' , "id":1 }')
-
-        jsonobject = json.loads(json_response.decode('utf-8','replace'))
-       
+        jsonobject = json.loads(json_response.decode('utf-8','replace'))       
         if(jsonobject.has_key('result')):
             return jsonobject['result']
         else:
@@ -296,10 +284,8 @@ class XbmcMedia:
     
     def verify(self):
         result = True
-
         if(self.title == '' or self.fan_art == '' or self.poster == ''):
             result = False
-
         return result
 
 if __name__ == '__main__':

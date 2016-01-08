@@ -19,24 +19,24 @@ msgstr ""
 #Settings
 
 msgctxt "#32110"
-msgid "Dim after 60 seconds"
-msgstr "Dimme nach 60 Sekunden"
+msgid "Dim"
+msgstr "Verdunkeln"
 
 msgctxt "#32111"
 msgid "Scrollspeed"
-msgstr "Scrollgeschwindigkeit"
+msgstr "Geschwindigkeit"
 
 msgctxt "#32112"
-msgid "Refresh interval in seconds"
-msgstr "Aktualisierungsintervall"
+msgid "Refresh interval (Seconds)"
+msgstr "Intervall zur Aktualisierung (Sekunden)"
 
 msgctxt "#32113"
 msgid "Image source"
-msgstr "Bilder-Quelle"
+msgstr "Bilder Quelle"
 
 msgctxt "#32115"
 msgid "Movies / TV Shows"
-msgstr "Filme / Serien"
+msgstr "Filme / TV Serien"
 
 msgctxt "#32116"
 msgid "Image folder"
@@ -45,3 +45,11 @@ msgstr "Eigene Bilder"
 msgctxt "#32117"
 msgid "- Path"
 msgstr "- Pfad"
+
+msgctxt "#32118"
+msgid "- Dim timer (Minutes)"
+msgstr "- Abdunkeln nach (Minuten)"
+
+msgctxt "#32119"
+msgid "- Dim level (Percent)"
+msgstr "- Abdunklungsstärke (Prozent)"
