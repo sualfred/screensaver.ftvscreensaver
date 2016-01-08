@@ -29,7 +29,7 @@ import xbmcvfs
 
 addon = xbmcaddon.Addon()
 addon_name = addon.getAddonInfo('name')
-addon_path = addon.getAddonInfo('path')
+addon_path = addon.getAddonInfo('path').decode("utf-8")
 
 class Screensaver(xbmcgui.WindowXMLDialog):
 
