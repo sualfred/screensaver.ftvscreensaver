@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.screensaver.fTVscreensaver" name="fTV Screensaver" version="0.1.2" provider-name="Sualfred">
+<addon id="script.screensaver.fTVscreensaver" name="fTV Screensaver" version="0.1.3" provider-name="Sualfred">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
     </requires>    
