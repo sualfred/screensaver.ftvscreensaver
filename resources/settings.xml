@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<settings>    
-	<setting id="source" label="32113" type="enum" lvalues="32115|32116"/>
-    <setting id="path" label="32117" type="folder"  source="auto" visible="eq(-1,1)"/>
-    <setting id="scrollspeed" label="32111" type="slider" default="60" range="10,10,100" option="int" />
-    <setting id="refresh" label="32112" type="slider" default="60" range="10,10,320" option="int" />
-    <setting id="DimEnabled" label="32110" type="bool" default="false"/>
-    <setting id="DimTimer" label="32118" type="slider" default="1" range="1,1,5" option="int" visible="eq(-1,true)"/>
-    <setting id="DimLevel" label="32119" type="slider" default="70" range="10,10,100" option="int" visible="eq(-2,true)"/>
+<settings>
+    <setting label="21870" type="lsep"/>
+	<setting id="source" label="$ADDON[screensaver.fTVscreensaver 32000]" type="enum" lvalues="14211|19076"/>
+	<setting id="path" label="$LOCALIZE[573]" type="folder"  source="auto" visible="eq(-1,1)"/>
+	<setting id="recursive" label="$LOCALIZE[20346]" type="bool" default="true" visible="eq(-2,1)"/>
+    <setting label="128" type="lsep"/>
+	<setting id="scrollspeed" label="$LOCALIZE[224]" type="slider" default="60" range="10,10,100" option="int" />
+	<setting id="refresh" label="$ADDON[screensaver.fTVscreensaver 32001]" type="slider" default="10" range="10,10,320" option="int" />
+	<setting id="dim" label="$LOCALIZE[352]" type="bool" default="false"/>
+	<setting id="dim_timer" label="$ADDON[screensaver.fTVscreensaver 32002]" type="slider" default="1" range="1,1,5" option="int" visible="eq(-1,true)"/>
+	<setting id="dim_level" label="$ADDON[screensaver.fTVscreensaver 32003]" type="slider" default="10" range="10,10,100" option="int" visible="eq(-2,true)"/>
 </settings>

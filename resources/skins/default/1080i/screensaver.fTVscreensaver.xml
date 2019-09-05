@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <window>
-    <onload>AlarmClock(LoopDelayStart,SetProperty(fTVscreensaver.StartLoop,1,Home),00:01,silent)</onload>
     <animation type="WindowOpen">
         <effect center="990,540" tween="circle" easing="out" end="100" start="110" time="400" type="zoom" />
         <effect easing="inout" end="100" start="0" time="400" tween="sine" type="fade" />
@@ -10,22 +9,13 @@
         <control type="image">
             <left>0</left>
             <top>0</top>
-            <width>1920</width>
-            <height>1080</height>
+            <bottom>0</bottom>
+            <right>0</right>
             <texture>default.png</texture>
         </control>
         <!-- round 1 -->
-        <control type="grouplist">
-            <animation loop="true" condition="String.IsEqual(Window(Home).Property(fTVscreensaver.Scrollspeed),100) + !String.IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="10000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="String.IsEqual(Window(Home).Property(fTVscreensaver.Scrollspeed),90) + !String.IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="20000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="String.IsEqual(Window(Home).Property(fTVscreensaver.Scrollspeed),80) + !String.IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="30000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="String.IsEqual(Window(Home).Property(fTVscreensaver.Scrollspeed),70) + !String.IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="40000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="String.IsEqual(Window(Home).Property(fTVscreensaver.Scrollspeed),60) + !String.IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="50000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="String.IsEqual(Window(Home).Property(fTVscreensaver.Scrollspeed),50) + !String.IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="60000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="String.IsEqual(Window(Home).Property(fTVscreensaver.Scrollspeed),40) + !String.IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="70000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="String.IsEqual(Window(Home).Property(fTVscreensaver.Scrollspeed),30) + !String.IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="80000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="String.IsEqual(Window(Home).Property(fTVscreensaver.Scrollspeed),20) + !String.IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="90000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="String.IsEqual(Window(Home).Property(fTVscreensaver.Scrollspeed),10) + !String.IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="100000" tween="linear" reversible="false" effect="slide">Conditional</animation>
+        <control type="group" id="100">
+            <control type="grouplist">
             <heigth>1060</heigth>
             <width>6135</width>
             <top>10</top>
@@ -307,19 +297,11 @@
                 </control>
             </control>
         </control>
-        <!-- round 2 -->
+    </control>
+    <!-- round 2 -->
+    <control type="group" id="200">
         <control type="grouplist">
             <left>6145</left>
-            <animation loop="true" condition="String.IsEqual(Window(Home).Property(fTVscreensaver.Scrollspeed),100) + !String.IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="10000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="String.IsEqual(Window(Home).Property(fTVscreensaver.Scrollspeed),90) + !String.IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="20000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="String.IsEqual(Window(Home).Property(fTVscreensaver.Scrollspeed),80) + !String.IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="30000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="String.IsEqual(Window(Home).Property(fTVscreensaver.Scrollspeed),70) + !String.IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="40000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="String.IsEqual(Window(Home).Property(fTVscreensaver.Scrollspeed),60) + !String.IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="50000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="String.IsEqual(Window(Home).Property(fTVscreensaver.Scrollspeed),50) + !String.IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="60000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="String.IsEqual(Window(Home).Property(fTVscreensaver.Scrollspeed),40) + !String.IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="70000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="String.IsEqual(Window(Home).Property(fTVscreensaver.Scrollspeed),30) + !String.IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="80000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="String.IsEqual(Window(Home).Property(fTVscreensaver.Scrollspeed),20) + !String.IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="90000" tween="linear" reversible="false" effect="slide">Conditional</animation>
-            <animation loop="true" condition="String.IsEqual(Window(Home).Property(fTVscreensaver.Scrollspeed),10) + !String.IsEmpty(Window(Home).Property(fTVscreensaver.StartLoop))" start="0,0" end="-6135,0" time="100000" tween="linear" reversible="false" effect="slide">Conditional</animation>
             <heigth>1060</heigth>
             <width>6135</width>
             <top>10</top>
@@ -600,75 +582,15 @@
                     <fadetime>1000</fadetime>
                 </control>
             </control>
-        </control>       
-        <!-- Dim -->
-        <control type="image">
-            <left>0</left>
-            <top>0</top>
-            <width>1920</width>
-            <height>1080</height>
-            <texture>default.png</texture>
-            <animation condition="!String.IsEqual(Window(Home).Property(fTVscreensaver.Dim),1)" effect="fade" start="0" end="0" time="0" reversible="false">Conditional</animation>
-            <!-- 60 sec -->
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),1) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),100)" effect="fade" start="0" end="100" time="2000" delay="60000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),1) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),90)" effect="fade" start="0" end="90" time="2000" delay="60000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),1) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),80)" effect="fade" start="0" end="80" time="2000" delay="60000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),1) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),70)" effect="fade" start="0" end="70" time="2000" delay="60000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),1) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),60)" effect="fade" start="0" end="60" time="2000" delay="60000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),1) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),50)" effect="fade" start="0" end="50" time="2000" delay="60000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),1) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),40)" effect="fade" start="0" end="40" time="2000" delay="60000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),1) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),30)" effect="fade" start="0" end="30" time="2000" delay="60000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),1) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),20)" effect="fade" start="0" end="20" time="2000" delay="60000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),1) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),10)" effect="fade" start="0" end="10" time="2000" delay="60000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),1) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),0)" effect="fade" start="0" end="0" time="2000" delay="60000" reversible="false">Conditional</animation>
-            <!-- 120 sec -->
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),2) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),100)" effect="fade" start="0" end="100" time="2000" delay="120000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),2) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),90)" effect="fade" start="0" end="90" time="2000" delay="120000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),2) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),80)" effect="fade" start="0" end="80" time="2000" delay="120000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),2) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),70)" effect="fade" start="0" end="70" time="2000" delay="120000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),2) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),60)" effect="fade" start="0" end="60" time="2000" delay="120000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),2) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),50)" effect="fade" start="0" end="50" time="2000" delay="120000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),2) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),40)" effect="fade" start="0" end="40" time="2000" delay="120000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),2) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),30)" effect="fade" start="0" end="30" time="2000" delay="120000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),2) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),20)" effect="fade" start="0" end="20" time="2000" delay="120000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),2) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),10)" effect="fade" start="0" end="10" time="2000" delay="120000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),2) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),0)" effect="fade" start="0" end="0" time="2000" delay="120000" reversible="false">Conditional</animation>
-            <!-- 180 sec -->
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),3) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),100)" effect="fade" start="0" end="100" time="2000" delay="180000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),3) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),90)" effect="fade" start="0" end="90" time="2000" delay="180000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),3) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),80)" effect="fade" start="0" end="80" time="2000" delay="180000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),3) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),70)" effect="fade" start="0" end="70" time="2000" delay="180000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),3) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),60)" effect="fade" start="0" end="60" time="2000" delay="180000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),3) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),50)" effect="fade" start="0" end="50" time="2000" delay="180000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),3) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),40)" effect="fade" start="0" end="40" time="2000" delay="180000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),3) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),30)" effect="fade" start="0" end="30" time="2000" delay="180000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),3) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),20)" effect="fade" start="0" end="20" time="2000" delay="180000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),3) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),10)" effect="fade" start="0" end="10" time="2000" delay="180000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),3) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),0)" effect="fade" start="0" end="0" time="2000" delay="180000" reversible="false">Conditional</animation>
-            <!-- 240 sec -->
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),4) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),100)" effect="fade" start="0" end="100" time="2000" delay="240000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),4) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),90)" effect="fade" start="0" end="90" time="2000" delay="240000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),4) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),80)" effect="fade" start="0" end="80" time="2000" delay="240000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),4) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),70)" effect="fade" start="0" end="70" time="2000" delay="240000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),4) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),60)" effect="fade" start="0" end="60" time="2000" delay="240000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),4) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),50)" effect="fade" start="0" end="50" time="2000" delay="240000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),4) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),40)" effect="fade" start="0" end="40" time="2000" delay="240000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),4) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),30)" effect="fade" start="0" end="30" time="2000" delay="240000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),4) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),20)" effect="fade" start="0" end="20" time="2000" delay="240000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),4) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),10)" effect="fade" start="0" end="10" time="2000" delay="240000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),4) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),0)" effect="fade" start="0" end="0" time="2000" delay="240000" reversible="false">Conditional</animation>
-            <!-- 300 sec -->
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),5) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),100)" effect="fade" start="0" end="100" time="2000" delay="300000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),5) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),90)" effect="fade" start="0" end="90" time="2000" delay="300000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),5) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),80)" effect="fade" start="0" end="80" time="2000" delay="300000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),5) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),70)" effect="fade" start="0" end="70" time="2000" delay="300000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),5) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),60)" effect="fade" start="0" end="60" time="2000" delay="300000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),5) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),50)" effect="fade" start="0" end="50" time="2000" delay="300000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),5) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),40)" effect="fade" start="0" end="40" time="2000" delay="300000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),5) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),30)" effect="fade" start="0" end="30" time="2000" delay="300000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),5) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),20)" effect="fade" start="0" end="20" time="2000" delay="300000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),5) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),10)" effect="fade" start="0" end="10" time="2000" delay="300000" reversible="false">Conditional</animation>
-            <animation condition="String.IsEqual(Window(Home).Property(fTVscreensaver.DimTimer),5) + String.IsEqual(Window(Home).Property(fTVscreensaver.DimLevel),0)" effect="fade" start="0" end="0" time="2000" delay="300000" reversible="false">Conditional</animation>
         </control>
-    </controls>
+    </control>
+    <!-- DIM - DO NOT REMOVE THIS CONTROL -->
+    <control type="image" id="300">
+        <left>0</left>
+        <top>0</top>
+        <bottom>0</bottom>
+        <right>0</right>
+        <texture>default.png</texture>
+    </control>
+</controls>
 </window>
