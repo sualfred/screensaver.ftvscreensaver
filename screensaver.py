@@ -129,4 +129,3 @@ if __name__ == '__main__':
     screensaver = Screensaver('screensaver.fTVscreensaver.xml',ADDON_PATH,'default')
     screensaver.doModal()
     del screensaver
-    sys.modules.clear()
